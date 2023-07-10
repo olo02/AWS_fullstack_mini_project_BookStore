@@ -1,0 +1,24 @@
+package team1;
+
+public class Member {
+	
+	String code;
+	String id;
+	String pw;
+
+	Member() {}
+
+	Member(String code, String id, String pw){
+		
+	}
+ 
+//	customer
+//	publisher
+//	admin
+ 
+ 
+ 
+
+ 
+ 
+}

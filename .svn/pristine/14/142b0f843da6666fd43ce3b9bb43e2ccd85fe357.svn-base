@@ -1,0 +1,57 @@
+package team1.service.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+import team1.service.AdminService;
+import team1.vo.Admin;
+import team1.vo.Member;
+import static team1.utils.BookStoreUtils.nextLine2;
+
+
+public class AdminServiceImpl implements AdminService {
+	private static AdminService adminService = new AdminServiceImpl();
+	public static AdminService getInstance() {
+		return adminService;
+	}
+	private AdminServiceImpl() {}
+	private List<Admin> admins = new ArrayList<Admin>();
+	private Admin loginUser = null;
+
+	@Override
+	public Member login() {
+		Admin loginUser = null;
+		String id = nextLine2("ID : ");
+		String pw = nextLine2("PW : ");
+		Admin findMember = findById(id);
+		if(findMember == null) {
+			System.out.println("회원정보를 찾을 수 없습니다");
+		} else if (findMember.getPw().equals(pw)) {
+			System.out.println("로그인 성공");
+			loginUser = findMember;
+		}
+	
+		return loginUser;
+	}
+
+	@Override
+	public Admin findById(String id) {
+		return null;
+	}
+
+	@Override
+	public Admin findByCode(int code) {
+		return null;
+	}
+
+	@Override
+	public Admin getLoginUser() {
+		return loginUser;
+	}
+	@Override
+	public Member register() {
+		return null;
+	}
+	
+	
+
+}

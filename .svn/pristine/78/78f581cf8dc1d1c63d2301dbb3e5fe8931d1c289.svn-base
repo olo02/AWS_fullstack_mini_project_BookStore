@@ -1,0 +1,71 @@
+package team1.service.impl;
+
+import team1.service.AdminService;
+import team1.service.CustomerService;
+import team1.service.MemberService;
+import team1.service.PublisherService;
+
+import team1.vo.Member;
+
+
+public class MemberServiceImpl implements MemberService {
+	private static MemberService MemberService = MemberServiceImpl.getInstance();
+	private CustomerService customerService = CustomerServiceImpl.getInstance();
+	private PublisherService publisherService = PublisherServiceImpl.getInstance();
+	private AdminService adminService = AdminServiceImpl.getInstance();
+	public static MemberService getInstance() {
+		return MemberService ;
+	}
+	private MemberServiceImpl() {}
+	
+	/**
+	 * @author 양찬용
+	 * @since 23/02/13
+	 * @param Member register
+	 * @return 기능 설명
+	 * 통합 회원가입 기능
+	 */
+	@Override
+	public Member register() {
+		int input = 0;
+		switch (input) {
+		case 1:
+			customerService.register();
+			break;
+		case 2:
+			publisherService.register();
+			break;
+		}
+		return null;
+	}
+
+	/**
+	 * @author 양찬용
+	 * @since 23/02/13
+	 * @param Member login
+	 * @return 기능 설명
+	 * 통합 로그인 기능
+	 */
+	
+	@Override
+	public Member login() {
+		int input = 0;
+		switch (input) {
+		case 1:
+			customerService.login();
+			// customer 메인메뉴 메서드 입력필요
+			break;
+		case 2:
+			publisherService.login();
+			// customer 메인메뉴 메서드 입력필요
+			break;
+		case 3:
+			adminService.login();
+			// admin 메인메뉴 메서드 입력필요
+			break;
+		}
+		return null;
+	}
+
+
+}

@@ -1,0 +1,70 @@
+package team1.vo;
+
+public class BookStock {
+
+	String publisher;
+	String title;
+	String contents;
+	String[] authors;
+	String isbn;
+	Integer price;
+
+	public BookStock() {
+	}
+
+	public BookStock(String publisher, String title, String contents, String[] authors, String isbn, Integer price) {
+	}
+
+	public String getPublisher() {
+		return publisher;
+	}
+
+	public void setPublisher(String publisher) {
+		this.publisher = publisher;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getContents() {
+		return contents;
+	}
+
+	public void setContents(String contents) {
+		this.contents = contents;
+	}
+
+	public String[] getAuthors() {
+		return authors;
+	}
+
+	public void setAuthors(String[] authors) {
+		this.authors = authors;
+	}
+
+	public String getIsbn() {
+		return isbn;
+	}
+
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
+
+	public Integer getPrice() {
+		return price;
+	}
+
+	public void setPrice(Integer price) {
+		this.price = price;
+	}
+
+	
+	
+	
+	
+}

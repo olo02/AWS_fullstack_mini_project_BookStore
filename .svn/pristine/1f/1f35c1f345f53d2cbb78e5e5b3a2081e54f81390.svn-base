@@ -1,0 +1,56 @@
+package team1.service;
+
+// 책 정보 관련 서비스
+public interface BookService {
+	
+	/**
+	 * @author 천은경
+	 * @since 23/02/07
+	 * @param Book
+	 * @return 기능 설명
+	 * 입력한다
+	 */
+	
+	
+	
+
+	/**
+	 * @author 천은경
+	 * @since 23/02/07
+	 * @param Book
+	 * @return 기능 설명
+	 * 검색한다(customer) (단일 조회: 제목별, 작가별 / 모든조회: 모든책)
+	 */
+
+	
+	
+	
+	/**
+	 * @author 천은경
+	 * @since 23/02/07
+	 * @param Book
+	 * @return 기능 설명
+	 * 수정한다(admin)
+	 */
+	
+	 
+
+	
+	
+	
+	/**
+	 * @author 천은경
+	 * @since 23/02/07
+	 * @param Book
+	 * @return 기능 설명
+	 * 삭제한다(admin)
+	 */
+
+	
+	
+	
+	
+	
+	
+	
+}

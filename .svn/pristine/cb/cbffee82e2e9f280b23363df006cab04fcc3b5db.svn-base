@@ -1,0 +1,93 @@
+package team1.vo;
+
+import java.util.Arrays;
+
+public class Book {
+
+	String publisher; // 출판사
+	String title; // 제목
+	String contents; // 내용
+	String[] authors; //작가
+	String isbn; // 책 코드 (재고 달라도 동일 책이면 동일 코드) 
+	int price; // 가격
+	int stock; //재고
+	int bId; // 서점에 들어온 책 index
+	
+
+	public Book() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Book(String publisher, String title, String contents, String[] authors, String isbn, int price, int stock,
+			int bId) {
+		super();
+		this.publisher = publisher;
+		this.title = title;
+		this.contents = contents;
+		this.authors = authors;
+		this.isbn = isbn;
+		this.price = price;
+		this.stock = stock;
+		this.bId = bId;
+	}
+	
+	
+	
+	public String getPublisher() {
+		return publisher;
+	}
+	public void setPublisher(String publisher) {
+		this.publisher = publisher;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getContents() {
+		return contents;
+	}
+	public void setContents(String contents) {
+		this.contents = contents;
+	}
+	public String[] getAuthors() {
+		return authors;
+	}
+	public void setAuthors(String[] authors) {
+		this.authors = authors;
+	}
+	public String getIsbn() {
+		return isbn;
+	}
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	public int getStock() {
+		return stock;
+	}
+	public void setStock(int stock) {
+		this.stock = stock;
+	}
+	public int getbId() {
+		return bId;
+	}
+	public void setbId(int bId) {
+		this.bId = bId;
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "Book [publisher=" + publisher + ", title=" + title + ", contents=" + contents + ", authors="
+				+ Arrays.toString(authors) + ", isbn=" + isbn + ", price=" + price + ", stock=" + stock + ", bId=" + bId
+				+ "]";
+	}
+	
+}

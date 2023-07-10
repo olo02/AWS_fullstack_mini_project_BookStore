@@ -1,0 +1,11 @@
+package team1.service.impl;
+
+import team1.service.BookService;
+
+public class BookServiceImpl implements BookService {
+	
+	
+	
+	
+	
+}

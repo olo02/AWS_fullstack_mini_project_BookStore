@@ -1,0 +1,9 @@
+package team1.service;
+
+// 결제 서비스
+public interface PaymentService {
+	// 입력한다(구매한다)
+	// 조회한다(주문내역 조회한다)
+	// 수정한다
+	// 삭제한다(수정과 삭제 모두 환불로 할 것인지?)
+}

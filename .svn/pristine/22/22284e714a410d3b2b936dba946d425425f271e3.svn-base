@@ -1,0 +1,14 @@
+package team1.service;
+
+
+public interface MemberService {
+	
+	//가입한다
+	void register();
+	
+	//로그인
+	void login();
+	
+	
+
+}

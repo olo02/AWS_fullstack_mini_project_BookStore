@@ -1,0 +1,37 @@
+package team1;
+
+import java.util.Scanner;
+
+import team1.service.BookService;
+import team1.service.impl.BookServiceImpl;
+
+public class BookStoreEx {
+	public static void main(String[] args) {
+		
+//	BookServiceImpl.getInstance().callReg();
+//	BookServiceImpl.getInstance().bookReg();
+		
+	BookService bookServiceImpl = BookServiceImpl.getInstance();
+	
+//	bookServiceImpl.callReg();
+	bookServiceImpl.bookList(1);
+	bookServiceImpl.reject();	
+//	bookServiceImpl.bookReg();
+//	bookServiceImpl.searchTitle();
+//	bookServiceImpl.searchAuthors();
+//	bookServiceImpl.publisherList("문학동네");
+//	bookServiceImpl.bookModify();
+//	bookServiceImpl.bookDelete();
+//	bookServiceImpl.bookList(0);
+	bookServiceImpl.bookList(2);
+	
+	
+	
+	
+	
+
+	
+	
+	
+	}
+}

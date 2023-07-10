@@ -1,0 +1,54 @@
+package team1.service.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import team1.service.PublisherService;
+import team1.vo.Publisher;
+
+public class PublisherServiceImpl implements PublisherService {
+	
+	/**
+	 * @author 양찬용
+	 * @since 23/02/10
+	 * @param 
+	 * @return 기능 설명
+	 * 싱글톤작업
+	 */
+	
+	private static PublisherService publisherService = new PublisherServiceImpl();
+	public static PublisherService getInstance() {
+		return publisherService;
+	}
+	private PublisherServiceImpl() {}
+	
+	private List<Publisher> publishers = new ArrayList<Publisher>();
+	private Publisher loginUser = null;
+
+	
+	
+	@Override
+	public void register() {
+		
+		
+	}
+
+	@Override
+	public void modify() {
+		
+		
+	}
+
+	@Override
+	public void remove() {
+		
+		
+	}
+
+	@Override
+	public void login() {
+		
+		
+	}
+	
+}

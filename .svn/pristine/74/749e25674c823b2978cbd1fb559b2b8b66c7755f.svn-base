@@ -1,0 +1,144 @@
+package team1.service;
+
+import team1.vo.Book;
+
+// 책 정보 관련 서비스
+public interface BookService {
+	
+
+	/**
+	 * @author 천은경
+	 * @since 23/02/07
+	 * @param Book
+	 * @return Book
+	 * 출판사의 새로운 책 등록 요청
+	 */
+	void callReg();
+	
+	
+	/**
+	 * @author 천은경
+	 * @since 23/02/07
+	 * @param 
+	 * @return Book
+	 * 출판사에게 요청받은 책을 서점에 등록
+	 */
+	void bookRegister(); 
+	
+	
+	/**
+	 * @author 천은경
+	 * @since 23/02/07
+	 * @param Book book
+	 * @return Book(title, publisher, authors, contents, price, stock)
+	 * 검색 시 책 출력 형태 설정
+	 */
+	void display(Book book);
+	
+
+	/**
+	 * @author 천은경
+	 * @since 23/02/08
+	 * @param String isbn
+	 * @return books에서 isbn 일치하는 Book
+	 * 일치 목록 조회 : isbn
+	 */
+	Book findBy(String isbn);
+	
+
+	/**
+	 * @author 천은경
+	 * @since 23/02/08
+	 * @param String isbn
+	 * @return pendingbooks에서 isbn 일치하는 Book
+	 * 일치 목록 조회 : isbn
+	 */
+	Book findByP(String isbn);
+	
+	
+	/**
+	 * @author 천은경
+	 * @since 23/02/07
+	 * @param 
+	 * @return title에 search와 일치하는 부분이 있는 Book
+	 * 일치 목록 조회 : 제목별
+	 */
+	void searchTitle();
+
+	
+	/**
+	 * @author 천은경
+	 * @since 23/02/07
+	 * @param 
+	 * @return author에 search와 일치하는 부분이 있는 Book
+	 * 일치 목록 조회 : 작가별
+	 */
+	void searchAuthors();
+	
+
+	
+	/**
+	 * @author 천은경
+	 * @since 23/02/08
+	 * @param String publisher
+	 * @return pendingBooks에 search와 일치하는 Book
+	 * 일치 목록 조회 : 출판사가 본인이 승인 요청한 책 목록 확인 
+	 */
+	void identifyCall(String publisher);
+	
+	
+	
+	/**
+	 * @author 천은경
+	 * @since 23/02/07
+	 * @param 
+	 * @return List에 등록된 모든 Book (books)
+	 * 목록 조회 : 모든 책
+	 */
+	void bookList();
+
+	
+	/**
+	 * @author 천은경
+	 * @since 23/02/08
+	 * @param 
+	 * @return 요청받은 모든 Book (pendingBooks)
+	 * 목록 조회 : 등록 대기 중 책 (관리자 권한)
+	 */
+	void pendingList();
+
+	
+	/**
+	 * @author 천은경
+	 * @since 23/02/08
+	 * @param Book
+	 * @return 기능 설명
+	 * 수정한다(admin)
+	 */
+	
+	
+	/**
+	 * @author 천은경
+	 * @since 23/02/08
+	 * @param int bId
+	 * @return books의 Book 삭제
+	 * 관리자가 모든 책 리스트 중 서점 index로 선택하여 삭제
+	 */
+	void bookDelete();
+	
+	
+	/**
+	 * @author 천은경
+	 * @since 23/02/08
+	 * @param int 임의의 번호
+	 * @return pendingBooks의 Book 삭제
+	 * 관리자가 승인 대기 책 리스트 중 임의의 번호를 선택하여 삭제
+	 */
+	void pendingDel();
+	
+	
+	
+	
+	
+	
+}

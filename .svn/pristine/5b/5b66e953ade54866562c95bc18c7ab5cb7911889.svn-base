@@ -1,0 +1,8 @@
+package team1.service;
+
+public interface CartService {
+	// 입력한다
+	// 조회한다
+	// 수정한다
+	// 삭제한다
+}

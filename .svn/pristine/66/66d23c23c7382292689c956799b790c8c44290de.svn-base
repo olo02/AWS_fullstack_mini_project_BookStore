@@ -1,0 +1,59 @@
+package team1.vo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+// 결제 클래스
+public class Payment {
+	private int pid; // 결제번호
+	private List<Book> bookList = new ArrayList<Book>();
+	private Customer customer;
+	private int totalPrice;
+	
+	public Payment() {
+		super();
+	}
+
+	public Payment(int pid, List<Book> bookList, Customer customer) {
+		this.pid = pid;
+		this.bookList = bookList;
+		this.customer = customer;
+		
+		for(Book b : bookList) {
+			totalPrice += b.getPrice();
+		}
+	}
+
+	public int getPid() {
+		return pid;
+	}
+
+	public void setPid(int pid) {
+		this.pid = pid;
+	}
+
+	public List<Book> getBookList() {
+		return bookList;
+	}
+
+	public void setBookList(List<Book> bookList) {
+		this.bookList = bookList;
+	}
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+
+	public int getTotalPrice() {
+		return totalPrice;
+	}
+
+	public void setTotalPrice(int totalPrice) {
+		this.totalPrice = totalPrice;
+	}
+	
+}

@@ -1,0 +1,15 @@
+package team1.service;
+
+import team1.vo.Member;
+
+public interface MemberService {
+	
+	//가입한다
+	Member register();
+	
+	//로그인
+	Member login();
+	
+	
+
+}

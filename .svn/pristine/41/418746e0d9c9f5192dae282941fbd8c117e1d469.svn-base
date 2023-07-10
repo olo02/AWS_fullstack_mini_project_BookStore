@@ -1,0 +1,134 @@
+package team1.vo;
+
+import java.util.Arrays;
+
+public class Book {
+
+	String publisher; // 출판사
+	String title; // 제목
+	String contents; // 내용
+	String[] authors; //작가
+	String isbn; // 책 코드 (재고 달라도 동일 책이면 동일 코드) 
+	int price; // 가격
+	int stock; //재고
+		
+	//베스트 셀러 / 추천 도서 / 등록 및 대기 상태
+	int status; // 상태 (0 = 정식등록, 1 = 대기중, 2 = 요청 반려)
+	Boolean picks; // 추천도서
+	Boolean bestSellers; // 베스트셀러
+	
+	
+	
+
+	public Book() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	// 모든 필드 생성자
+	public Book(String title, String contents, String[] authors, String publisher, String isbn, int price, int stock,
+			int status, Boolean picks, Boolean bestSellers) {
+		super();
+		this.publisher = publisher;
+		this.title = title;
+		this.contents = contents;
+		this.authors = authors;
+		this.isbn = isbn;
+		this.price = price;
+		this.stock = stock;
+		this.status = status;
+		this.picks = picks;
+		this.bestSellers = bestSellers;
+	}
+	
+	// 출판사의 책 등록용 생성자
+	public Book(String title, String contents, String[] authors, String publisher, String isbn, int price, int stock) {
+		super();
+		this.publisher = publisher;
+		this.title = title;
+		this.contents = contents;
+		this.authors = authors;
+		this.isbn = isbn;
+		this.price = price;
+		this.stock = stock;
+		this.status = 1;
+	}	
+	
+	public String getPublisher() {
+		return publisher;
+	}
+	public void setPublisher(String publisher) {
+		this.publisher = publisher;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getContents() {
+		return contents;
+	}
+	public void setContents(String contents) {
+		this.contents = contents;
+	}
+	public String[] getAuthors() {
+		return authors;
+	}
+	public void setAuthors(String[] authors) {
+		this.authors = authors;
+	}
+	public String getIsbn() {
+		return isbn;
+	}
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	public int getStock() {
+		return stock;
+	}
+	public void setStock(int stock) {
+		this.stock = stock;
+	}
+
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
+	}
+
+	public Boolean getPicks() {
+		return picks;
+	}
+
+	public void setPicks(Boolean picks) {
+		this.picks = picks;
+	}
+
+	public Boolean getBestSellers() {
+		return bestSellers;
+	}
+
+	public void setBestSellers(Boolean bestSellers) {
+		this.bestSellers = bestSellers;
+	}
+
+	//관리자 모드 조회
+	public String toString() {
+		
+		String bookStatus = null;
+		if(status == 0) bookStatus = "정식 등록";
+		else if(status == 1) bookStatus = "대기 중";
+		else bookStatus = "요청 반려";
+		
+		return "("+ bookStatus + ")  isbn코드: "+ isbn + ", 출판사: " + publisher + " < " + title + " >   저자: " 
+			+ Arrays.toString(authors) + ", 가격: " + price + ", 수량: " + stock ;
+	}
+}

@@ -1,0 +1,63 @@
+package team1.service.impl;
+
+/**
+ * @author
+ * @Since 
+ * 
+ * 
+ */
+
+import java.util.ArrayList;
+import java.util.List;
+import team1.service.CustomerService;
+import team1.utils.BookStoreUtils;
+import team1.vo.Customer;
+import team1.vo.Member;
+
+
+
+public class CustomerServiceImpl implements CustomerService {
+	private List<Customer> customer = new ArrayList<Customer>();
+	private Customer loginUser = null;
+	
+	@Override
+	public void register() {
+		String id = BookStoreUtils.nextLine("id를 입력해주세요");
+		if (findBy(id) != null) {
+			System.err.println("중복된 id입니다");
+			return;
+			}
+		String pw = BookStoreUtils.nextLine("pw를 입력해주세요");
+		String email = BookStoreUtils.nextLine("email을 입력해주세요");
+		String phone = BookStoreUtils.nextLine("휴대폰 번호를 입력해주세요");
+		String address = BookStoreUtils.nextLine("주소를 입력해주세요");
+		Customer customers = new Customer(id, pw, email, phone, address);
+		customer.add(customers);
+		
+		
+		 
+		
+		
+		
+		
+	}
+	@Override
+	public Customer findBy(String id) {
+		return null;
+	}
+	@Override
+	public void modify() {
+	
+	}
+	@Override
+	public void remove() {
+		
+	}
+	@Override
+	public void login() {
+		
+	}
+	
+	
+
+}

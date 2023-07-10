@@ -1,0 +1,93 @@
+package team1.service.impl;
+
+import team1.service.*;
+import team1.utils.BookStoreUtils;
+import team1.vo.Book;
+import team1.vo.Member;
+
+public class BookStoreServiceImpl implements BookStoreService {
+	private static BookStoreService bookStoreService = new BookStoreServiceImpl();
+	private static boolean runCheck = true;
+
+//	AdminService adminService = AdminServiceImpl.getInstance();
+//	PublisherService publisherService = PublisherServiceImpl.getInstance();
+//	CustomerService customerService = CustomerServiceImpl.getInstance();
+
+	MemberService memberService = MemberServiceImpl.getInstance();
+	BookService bookService = BookServiceImpl.getInstance();
+
+	PaymentService paymentService = PaymentServiceImpl.getInstance();
+
+	private Member loginUser;
+	private BookStoreServiceImpl(){}
+	public static BookStoreService getInstance() {
+		return bookStoreService;
+	}
+
+	@Override
+	public void run() {
+		while (runCheck){
+			mainMenu();
+		}
+	}
+
+	private void mainMenu() {
+		Member member = memberService.getLoginUser();
+		String menuText = "1.베스트셀러\t2.추천도서\t3.책검색";
+
+		if(member == null){
+			menuText += "\t4.회원가입\t로그인";
+		} else {
+			menuText += "\t4.로그아웃";
+		}
+
+		int input = BookStoreUtils.nextInt(menuText);
+
+		switch(input) {
+			case 1:
+				System.out.println("1번");
+				break;
+			case 2:
+				System.out.println("2번");
+				break;
+			case 3:
+				bookSearch();
+				break;
+			case 4:
+				System.out.println("4번");
+				break;
+			case 5:
+				memberService.login();
+				break;
+			default:
+				System.out.println("에러");
+		}
+
+	}
+
+	private void bookSearch(){
+		//String menuText = "1.도서명 검색\t2.작가 검색\t3.도서번호 검색";
+		String menuText = "1.도서명 검색\t2.작가 검색";
+
+		int input = BookStoreUtils.nextInt(menuText);
+
+		switch(input) {
+			case 1:
+				// 도서명 검색
+				bookService.searchTitle();
+				break;
+			case 2:
+				// 작가 검색
+				bookService.searchAuthors();
+				break;
+			case 3:
+				// 도서 검색
+				String isbn = BookStoreUtils.nextLine("검색할 isbn을 입력해주세요");
+				Book findBook = bookService.findBy(isbn);
+				findBook.display(findBook);
+				break;
+			default:
+				System.out.println("에러");
+		}
+	}
+}

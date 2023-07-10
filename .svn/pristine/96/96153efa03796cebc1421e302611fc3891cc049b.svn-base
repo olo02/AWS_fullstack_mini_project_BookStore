@@ -1,0 +1,121 @@
+package team1.service.impl;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import team1.service.BookService;
+import team1.utils.BookStoreUtils;
+import team1.vo.Book;
+
+public class BookServiceImpl implements BookService {
+
+	// 서점에 등록된 모든 책 List
+	List<Book> books = new ArrayList<>();
+	// 베스트셀러 List
+	List<Book> bestSellers = new ArrayList<>();
+	// 추천도서 List
+	List<Book> picks = new ArrayList<>();
+
+	// 더미데이터
+	{
+		books.add(new Book("미래의창", "트렌드 코리아 2023",
+				"평균 실종과 오피스 빅뱅의 2023. 관계, 일터, 나이, 공간..... 모든 것이 재정의된다. 중고거래 사이트에서 5천 원짜리 모바일 상품권 거래가 빈번하게 이루어지고 외식비를 아끼기 위해 대형마트의...",
+				new String[] { "김난도" }, "10110", 19000, 3, 100));
+		books.add(new Book("데이원", "세이노의 가르침",
+				"2000년부터 발표된 그의 주옥같은 글들. 독자들이 자발적으로 만든 제본서는 물론, 전자책과 앱까지 나왔던 《세이노의 가르침》이 드디어 전국 서점에서 독자들을 마주한다.",
+				new String[] { "세이노" },"10111", 7200, 2, 101));
+		books.add(new Book("엔알디3", "자소서 바이블 2.0",
+				"독보적 취업 유튜버 ‘면접왕 이형’의 베스트셀러 ‘자소서 바이블’이 개정판으로 돌아왔다! 최종 합격으로 연결되는 자소서 작성법! 뻔하지 않는 지원동기 쓰는 방법!",
+				new String[] { "면접왕 이형"},"10112", 19800, 5, 102));
+	}
+	
+	
+	// 책 출력 형태 설정
+	@Override
+	public void display(Book book) {
+		//책 내용이 길 때, 두 줄로 간추리는 설정
+		List<String> con = new ArrayList<String>();
+		if(book.getContents().length() >= 40) {
+			con.add(book.getContents().substring(0, 40));
+			con.add(book.getContents().substring(40, 80) + "…");
+		} else {
+			con.add(book.getContents());
+		}
+		// 책 정보 출력
+		System.out.print("【"+book.getTitle()+"】 ");
+		System.out.print(book.getPublisher() + " /");
+		System.out.print(" "+ Arrays.toString(book.getAuthors()));
+		System.out.print(" ┃ 가격: "+book.getPrice()+"원 ┃");
+		System.out.println(" 남은 수량: "+ book.getStock() + "권 ┃");
+		for(int i = 0 ; i < con.size() ; i++) {
+			System.out.println(con.get(i));
+		}
+	}
+
+	//일치 목록 조회 : 책 제목 검색 
+	@Override
+	public void searchTitle(String search) {
+		for(int i = 0 ; i < books.size(); i++) {
+			if(books.get(i).getTitle().contains(search)) {
+				display(books.get(i));
+			}
+		}
+	}
+
+	//일치 목록 조회 : 책 작가 검색
+	@Override
+	public void searchAuthors(String search) {
+		for(int i = 0 ; i < books.size() ; i++ ) {
+			for(int j = 0 ; j < books.get(i).getAuthors().length ; j++) {
+				if(books.get(i).getAuthors()[j].contains(search)) {
+					display(books.get(i));
+				}
+			}
+		}
+	}
+
+	//목록 조회 : 등록된 모든 책 조회
+	@Override
+	public void bookList() {
+		for(int i = 0 ; i < books.size() ; i++) {
+			System.out.println(" 0"+ (i + 1));
+			display(books.get(i));
+		}
+	}
+	
+	// 출판사의 등록 요청
+	// 작업 중---
+	@Override
+	public void bookCall() {
+		
+		String isbn = BookStoreUtils.nextLine("isbn코드를 입력하세요");
+		//이때 isbn이 같은 책이 있다면 기존에 등록된 책이니 수정 또는 메인으로 가도록 작업ing
+		String title = BookStoreUtils.nextLine("책 제목을 입력하세요");
+		String publisher = BookStoreUtils.nextLine("출판사를 입력하세요");
+		String authors = BookStoreUtils.nextLine("작가명을 입력하세요");
+		String contents = BookStoreUtils.nextLine("책 설명을 입력하세요");
+		int price = BookStoreUtils.nextInt("가격을 입력하세요");
+		int stock = BookStoreUtils.nextInt("수량을 입력하세요");
+		
+		Book book = new Book(publisher, title, contents, new String[] {authors}, isbn, price, stock);
+		// books는 등록된 모든 책이기 때문에 요청받은 책 List 필요.
+		books.add(book);
+		
+		System.err.println("<" + title + ">  등록 요청되었습니다.");
+		System.out.println("서점의 승인 후 정식 등록됩니다. 이용해 주셔서 감사합니다.");
+		book.setStock(book.getStock() + 1);
+	}
+	
+	//요청받은 책 등록
+	@Override
+	public void bookResister() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+	
+	
+	
+}

@@ -1,0 +1,63 @@
+package team1.service.impl;
+
+import team1.service.AdminService;
+import team1.service.BookService;
+import team1.service.BookStoreService;
+import team1.service.CustomerService;
+import team1.service.PaymentService;
+import team1.service.PublisherService;
+import team1.utils.BookStoreUtils;
+import team1.vo.Member;
+
+public class BookStoreServiceImpl implements BookStoreService {
+	private static BookStoreService bookStoreService = new BookStoreServiceImpl();
+	private static boolean runCheck = true;
+
+	AdminService adminService = AdminServiceImpl.getInstance();
+	PublisherService publisherService = PublisherServiceImpl.getInstance();
+	CustomerService customerService = CustomerServiceImpl.getInstance();
+	BookService bookService = BookServiceImpl.getInstance();
+
+	PaymentService paymentService = PaymentServiceImpl.getInstance();
+
+	private Member loginUser;
+	private BookStoreServiceImpl(){}
+	public static BookStoreService getInstance() {
+		return bookStoreService;
+	}
+
+	@Override
+	public void run() {
+		while (runCheck){
+			mainMenu();
+		}
+	}
+
+	private void mainMenu() {
+		String menuText = "1.베스트셀러\t2.추천도서\t3.책검색\t4.회원가입\t5.로그인";
+
+
+		int input = BookStoreUtils.nextInt(menuText);
+
+		switch(input) {
+			case 1:
+				System.out.println("input = " + input);
+				break;
+			case 2:
+				System.out.println("2번");
+				break;
+			case 3:
+				System.out.println("3번");
+				break;
+			case 4:
+				System.out.println("4번");
+				break;
+			case 5:
+				System.out.println("5번");
+				break;
+			default:
+				System.out.println("에러");
+		}
+
+	}
+}

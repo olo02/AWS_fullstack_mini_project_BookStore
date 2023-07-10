@@ -1,0 +1,118 @@
+package team1.service.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import team1.service.PaymentService;
+import team1.vo.Book;
+import team1.vo.Customer;
+import team1.vo.Payment;
+
+public class PaymentServiceImpl implements PaymentService {
+	private List<Payment> payments = new ArrayList<Payment>();
+	private int pIndex = 1;
+
+	/**
+	 * @author 방한솔
+	 * @since 23/02/08
+	 * @param Customer, List<Book>
+	 * @return 기능 설명
+	 * 입력한다(구매한다)
+	 */
+	@Override
+	public void purchase(List<Book> bookStocks, Customer customer, List<Book> bookLists) {
+		if(customer == null || bookLists == null) {
+			System.err.println("고객정보 또는 구매리스트 정보가 존재하지 않습니다.");
+			return;
+		}
+		
+		payments.add(new Payment(pIndex++, bookLists, customer));
+	}
+
+	/**
+	 * @author 방한솔
+	 * @since 23/02/08
+	 * @param pid
+	 * @return 기능 설명
+	 * 조회한다(주문내역 조회한다)
+	 */
+	@Override
+	public Payment findBy(int pid) {
+		for(Payment p : payments) {
+			if(pid == p.getPid()) {
+				display(p);
+				return p;				
+			}
+		}
+		
+		return null;
+	}
+
+
+	/**
+	 * @author 방한솔
+	 * @since 23/02/08
+	 * @param pid
+	 * @return 기능 설명
+	 * 삭제한다(환불처리, 실제 삭제 X)
+	 */
+	@Override
+	public void refund(List<Book> bookStocks, int pid) {
+		Payment p = findBy(pid);
+		if(p == null) {
+			System.err.println("주문정보가 존재하지 않습니다!");
+		}
+		
+		// p.getBookList() : 주문한 책 리스트
+		// bookStock : 전체 책 리스트
+		for(Book b : p.getBookList()) {
+			for(int i = 0 ; i < bookStocks.size() ; i++) {
+				if(b.getbId() == bookStocks.get(i).getbId()) {
+					Book updateBook = bookStocks.get(i);
+					// 재고 수정
+					// updateBook.setStock(pid);
+					bookStocks.set(i, updateBook);
+				}
+			}
+		}
+
+	}
+
+	/**
+	 * @author 방한솔
+	 * @since 23/02/08
+	 * @param Payment
+	 * @return 기능 설명
+	 * 결제 내용을 콘솔에 출력한다.
+	 */
+	@Override
+	public void display(Payment p) {
+		System.out.println("=============================");
+		System.out.println("주문 번호 : " + p.getPid());
+		for(Book b : p.getBookList()) {
+			System.out.println("책 코드 : " + b.getIsbn());
+			System.out.println("제목 : " + b.getTitle());
+			System.out.println("작가 : " + b.getAuthors());
+			// 재고 출력
+			//System.out.println("수량 : " + b.getStock());
+		}
+		System.out.println("총합 : " + p.getTotalPrice());
+		System.out.println("=============================");
+		
+	}
+
+	/**
+	 * @author 방한솔
+	 * @since 23/02/08
+	 * @param Payment
+	 * @return 기능 설명
+	 * 전체 결제 리스트를 출력한다.
+	 */
+	@Override
+	public void list() {
+		for(int i = 0; i < payments.size() ; i++) {
+			display(payments.get(i));
+		}
+	}
+
+}

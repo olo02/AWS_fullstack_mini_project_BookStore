@@ -1,0 +1,19 @@
+package team1.service;
+
+import team1.vo.Order;
+
+public interface CartService {
+    public CartService getInstance();
+
+    // 입력한다
+    public void addOrder(Order o);
+
+    // 조회한다
+    public void list();
+
+    // 수정한다
+    public void update(int orderId , int quantity);
+
+	// 삭제한다
+    public void delete(int orderId);
+}

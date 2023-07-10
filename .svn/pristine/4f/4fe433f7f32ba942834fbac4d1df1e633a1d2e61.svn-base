@@ -1,0 +1,55 @@
+package team1.service;
+
+import java.util.List;
+
+import team1.vo.Book;
+import team1.vo.Customer;
+import team1.vo.Payment;
+
+// 결제 서비스
+public interface PaymentService {
+	/**
+	 * @author 방한솔
+	 * @since 23/02/08
+	 * @param Customer, List<Book>
+	 * @return 기능 설명
+	 * 입력한다(구매한다)
+	 */
+	void purchase(List<Book> bookStocks, Customer customer, List<Book> bookLists);
+	
+	/**
+	 * @author 방한솔
+	 * @since 23/02/08
+	 * @param pid
+	 * @return 기능 설명
+	 * 조회한다(주문내역 조회한다)
+	 */
+	Payment findBy(int pid);
+	
+	/**
+	 * @author 방한솔
+	 * @since 23/02/08
+	 * @param pid
+	 * @return 기능 설명
+	 * 삭제한다(환불처리, 실제 삭제 X)
+	 */
+	void refund(List<Book> bookStocks, int pid);
+	
+	/**
+	 * @author 방한솔
+	 * @since 23/02/08
+	 * @param Payment
+	 * @return 기능 설명
+	 * 결제 내용을 콘솔에 출력한다.
+	 */
+	void display(Payment p);
+	
+	/**
+	 * @author 방한솔
+	 * @since 23/02/08
+	 * @param Payment
+	 * @return 기능 설명
+	 * 전체 결제 리스트를 출력한다.
+	 */
+	void list();
+}

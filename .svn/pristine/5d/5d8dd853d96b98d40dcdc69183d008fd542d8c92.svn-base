@@ -1,0 +1,9 @@
+package team1.service;
+
+// 책 정보 관련 서비스
+public interface BookService {
+	// 입력한다(admin)
+	// 검색한다(customer) (단일 조회: 제목별, 작가별 / 모든조회: 모든책)
+	// 수정한다(admin)
+	// 삭제한다(admin)
+}
