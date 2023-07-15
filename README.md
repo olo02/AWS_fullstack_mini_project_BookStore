@@ -212,6 +212,6 @@ $ git clone https://github.com/olo02/AWS_fullstack_mini_project_BookStore.git
 ## References
 
 참고 사이트 : [Aladin 서점](https://www.aladin.co.kr/home/welcome.aspx)
-데이터 크롤링 : [Kakao 도서 검색](https://www.aladin.co.kr/home/welcome.aspx)
-README Template : [parkjiye](https://velog.io/@luna7182/%EB%B0%B1%EC%97%94%EB%93%9C-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-README-%EC%93%B0%EB%8A%94-%EB%B2%95)
-Hit : [hit](https://hits.seeyoufarm.com/)
+<br> 데이터 크롤링 : [Kakao 도서 검색](https://www.aladin.co.kr/home/welcome.aspx)
+<br> README Template : [parkjiye](https://velog.io/@luna7182/%EB%B0%B1%EC%97%94%EB%93%9C-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-README-%EC%93%B0%EB%8A%94-%EB%B2%95)
+<br> Hit : [hit](https://hits.seeyoufarm.com/)
