@@ -39,7 +39,7 @@ For building and running the application you need:
 $ git clone https://github.com/olo02/AWS_fullstack_mini_project_BookStore.git
 ```
 
-#### Dummy data
+### Dummy data
 
 ```
 회원 정보
