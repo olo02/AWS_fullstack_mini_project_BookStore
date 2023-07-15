@@ -73,11 +73,15 @@ $ git clone https://github.com/olo02/AWS_fullstack_mini_project_BookStore.git
 
 ## 프로젝트 구성
 
+<div align="center">
+
 |                                                   회원가입                                                    |                                                    로그인                                                     |
 | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
-| <img width="329" src="https://github.com/olo02/olo02/assets/121186383/2b0bcde2-7e8a-448b-9e58-557a3f9a5f86"/> | <img width="329" src="https://github.com/olo02/olo02/assets/121186383/50d54799-5941-4e84-8eb5-77a2965d3235"/> |
+| <img width="500" src="https://github.com/olo02/olo02/assets/121186383/2b0bcde2-7e8a-448b-9e58-557a3f9a5f86"/> | <img width="500" src="https://github.com/olo02/olo02/assets/121186383/50d54799-5941-4e84-8eb5-77a2965d3235"/> |
 |                                                    책 검색                                                    |                                                     주문                                                      |
-| <img width="329" src="https://github.com/olo02/olo02/assets/121186383/866f3c09-def4-4e77-91b8-68a367cb6163"/> | <img width="329" src="https://github.com/olo02/olo02/assets/121186383/9dc7e902-bac5-4117-91b1-8db1532191ea"/> |
+| <img width="500" src="https://github.com/olo02/olo02/assets/121186383/866f3c09-def4-4e77-91b8-68a367cb6163"/> | <img width="500" src="https://github.com/olo02/olo02/assets/121186383/9dc7e902-bac5-4117-91b1-8db1532191ea"/> |
+
+</div>
 
 ---
 
