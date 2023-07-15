@@ -12,6 +12,7 @@ import java.util.Map;
 import com.google.gson.Gson;
 
 public class KakaoDataCrawling {
+	
 	/**
 	 * REST API로 통신하여 받은 JSON형태의 데이터를 String으로 받아오는 메소드
 	 */
