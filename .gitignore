@@ -1,1 +1,8 @@
-bin/*
+bin/
+
+.idea
+.settings
+.svn
+.metadata
+.classpath
+.project
