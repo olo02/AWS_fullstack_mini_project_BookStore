@@ -141,11 +141,6 @@ $ git clone https://github.com/olo02/AWS_fullstack_mini_project_BookStore.git
 
 ```bash
 ├── README.md
-├── .idea
-├── .metadata
-├── .settings
-├── .svn
-├── bin/team1
 ├── src/team1
 │   ├── dataCrawling : 데이터 크롤링
 │   │   └── KakaoDataCrawling.java : 전체 프로젝트 실행시 주석 요
@@ -180,8 +175,7 @@ $ git clone https://github.com/olo02/AWS_fullstack_mini_project_BookStore.git
 │   │   ├── PaymentStatus.java
 │   │   └── Publisher.java
 │   └── BookStoreEx.java : 프로젝트 실행 main
-├── .classpath
-├── .project
+├── .gitignore
 ├── admins.ser : 관리자 데이터
 ├── book.ser : 책 데이터
 ├── customer.ser : 일반 회원 데이터
