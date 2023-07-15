@@ -5,16 +5,14 @@
 
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Folo02%2FAWS_fullstack_mini_project_BookStore&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
-<br>
-
-**AWS 풀스택 개발자 양성과정 미니 프로젝트** <br/>
-**개발기간: 2022.02.06 ~ 2022.02.15**
-
 </div>
 
 ---
 
 ## 프로젝트 소개
+
+> **AWS 풀스택 개발자 양성과정 미니 프로젝트** <br/>
+> **개발기간: 2022.02.06 ~ 2022.02.15**
 
 AWS 풀스택 개발자 과정 한 달 차에 Java 내용 복습을 위해 미니프로젝트로 작업하였습니다.
 사용자 인터페이스가 갖춰야할 기능인 CRUD를 효과적으로 구현할 수 있는 주제를 선정하고자 하였고, 그 중 평소에 친숙하게 사용하였던 인터넷 서점관리시스템을 선택하게 되었습니다.
